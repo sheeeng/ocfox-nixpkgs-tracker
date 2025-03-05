@@ -81,7 +81,9 @@ history.forEach((h: { pr: number; title: string }) => {
 });
 
 async function redirectToPRPage() {
-  const pr = inputElement.value;
+  const match = inputElement.value.match(/\/pull\/(\d+)/);
+  const pr = match ? match[1] : inputElement.value;
+
   if (pr) {
     window.location.href = `?pr=${pr}`;
   }
