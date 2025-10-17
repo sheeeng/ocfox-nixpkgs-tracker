@@ -77,10 +77,7 @@ export async function isContain(
     return false;
   }
   const data = await response.json();
-  if (data.status === "identical" || data.status === "behind") {
-    return true;
-  }
-  return false;
+  return data.status === "identical" || data.status === "behind";
 }
 
 export type History = {
