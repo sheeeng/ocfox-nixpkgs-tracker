@@ -2,7 +2,7 @@ import "./style.css";
 import setupColorScheme from "./scheme.ts";
 import {
   branches,
-  getMeregeCommit,
+  getMergeCommit,
   getPR,
   hasToken,
   isContain,
@@ -141,7 +141,7 @@ async function handlePR(pr: string) {
   titleElement.href = "https://github.com/nixos/nixpkgs/pull/" + pr;
   setPRtitle(prHeader.title);
 
-  const mergeCommit = await getMeregeCommit(pr);
+  const mergeCommit = await getMergeCommit(pr);
 
   async function checkBranch(branch: string) {
     const merged = await isContain(branch, mergeCommit);

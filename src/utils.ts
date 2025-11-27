@@ -54,7 +54,7 @@ export async function getPR(pr: string): Promise<PR> {
   };
 }
 
-export async function getMeregeCommit(pr: string): Promise<string> {
+export async function getMergeCommit(pr: string): Promise<string> {
   const response = await fetch(
     `https://api.github.com/repos/nixos/nixpkgs/pulls/${pr}`,
     { headers },
